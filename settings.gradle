@@ -1,3 +1,4 @@
 rootProject.name = 'java-hexagonal-structure'
 
 include 'java-hexagonal-structure'
+include 'java-hexagonal-structure-application'
