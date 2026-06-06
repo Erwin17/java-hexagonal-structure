@@ -1,5 +1,4 @@
 plugins {
-	id 'java'
 	id 'org.springframework.boot'
 }
 
@@ -10,4 +9,9 @@ springBoot {
 
 dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-web'
+
+
+    implementation project(':java-hexagonal-structure-application')
+    implementation project(':java-hexagonal-structure-domain')
+    implementation project(':java-hexagonal-structure-infrastructure')
 }
