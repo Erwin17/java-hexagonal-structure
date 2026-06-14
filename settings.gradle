@@ -1,6 +1,13 @@
+pluginManagement {
+    repositories {
+        mavenCentral()
+        gradlePluginPortal()
+    }
+}
+
 rootProject.name = 'java-hexagonal-structure'
 
-include 'java-hexagonal-structure'
 include 'java-hexagonal-structure-application'
 include 'java-hexagonal-structure-domain'
 include 'java-hexagonal-structure-infrastructure'
+include 'java-hexagonal-structure'

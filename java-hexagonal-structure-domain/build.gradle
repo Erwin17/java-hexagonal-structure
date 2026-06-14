@@ -1,1 +1,5 @@
-dependencies {}
+dependencies {
+    //implementation project(":java-hexagonal-structure-common")
+}
+
+jar { enabled = false }
