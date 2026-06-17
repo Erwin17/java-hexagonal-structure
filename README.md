@@ -1,46 +1,13 @@
 # java-hexagonal-structure
 
+
+## Application Entry Point
+
 ```
-├── HELP.md
-├── README.md
-├── build.gradle
-├── gradle
-│   └── wrapper
-│       ├── gradle-wrapper.jar
-│       └── gradle-wrapper.properties
-├── gradlew
-├── gradlew.bat
 ├── java-hexagonal-structure
 │   ├── build
-│   │   ├── classes
-│   │   │   └── java
-│   │   │       └── main
-│   │   │           └── com
-│   │   │               └── app
-│   │   │                   ├── JavaHexagonalStructureApplication.class
-│   │   │                   └── config
-│   │   │                       └── YMLConfig.class
-│   │   ├── generated
-│   │   │   └── sources
-│   │   │       ├── annotationProcessor
-│   │   │       │   └── java
-│   │   │       │       └── main
-│   │   │       └── headers
-│   │   │           └── java
-│   │   │               └── main
 │   │   ├── libs
 │   │   │   └── java-hexagonal-structure-0.0.1-SNAPSHOT.jar
-│   │   ├── resolvedMainClassName
-│   │   ├── resources
-│   │   │   └── main
-│   │   │       ├── application.yaml
-│   │   │       ├── static
-│   │   │       └── templates
-│   │   └── tmp
-│   │       ├── bootJar
-│   │       │   └── MANIFEST.MF
-│   │       └── compileJava
-│   │           └── previous-compilation-data.bin
 │   ├── build.gradle
 │   └── src
 │       └── main
@@ -48,12 +15,49 @@
 │           │   └── com
 │           │       └── app
 │           │           ├── JavaHexagonalStructureApplication.java
-│           │           └── config
-│           │               └── YMLConfig.java
+│           │           ├── config
+│           │           │   └── YMLConfig.java
+│           │           └── controller
+│           │               ├── order
+│           │               │   └── OrderController.java
+│           │               └── product
+│           │                   └── ProductController.java
 │           └── resources
 │               ├── application.yaml
 │               ├── static
 │               └── templates
+```
+
+## Domain Layer
+```
+├── java-hexagonal-structure-domain
+│   ├── build.gradle
+│   └── src
+│       └── main
+│           └── java
+│               └── com
+│                   └── app
+│                       ├── commons
+│                       │   ├── AggregateRoot.java
+│                       │   ├── DomainEvent.java
+│                       │   └── Entity.java
+│                       ├── entities
+│                       │   ├── client
+│                       │   │   └── User.java
+│                       │   ├── order
+│                       │   │   └── OrderRoot.java
+│                       │   └── product
+│                       │       └── Product.java
+│                       ├── exceptions
+│                       │   └── BusinessException.java
+│                       └── ports
+│                           ├── events
+│                           ├── repository
+│                           └── services
+```
+
+## Application Layer
+```
 ├── java-hexagonal-structure-application
 │   ├── build
 │   │   ├── libs
@@ -67,81 +71,45 @@
 │           └── java
 │               └── com
 │                   └── app
-│                       ├── commands
-│                       ├── queries
 │                       └── usecase
-├── java-hexagonal-structure-domain
-│   ├── build
-│   │   ├── classes
-│   │   │   └── java
-│   │   │       └── main
-│   │   │           └── com
-│   │   │               └── app
-│   │   │                   └── order
-│   │   │                       └── OrderRoot.class
-│   │   ├── generated
-│   │   │   └── sources
-│   │   │       ├── annotationProcessor
-│   │   │       │   └── java
-│   │   │       │       └── main
-│   │   │       └── headers
-│   │   │           └── java
-│   │   │               └── main
-│   │   ├── libs
-│   │   │   └── java-hexagonal-structure-domain-0.0.1-SNAPSHOT.jar
-│   │   └── tmp
-│   │       ├── compileJava
-│   │       │   └── previous-compilation-data.bin
-│   │       └── jar
-│   │           └── MANIFEST.MF
-│   ├── build.gradle
-│   └── src
-│       └── main
-│           └── java
-│               └── com
-│                   └── app
-│                       └── order
-│                           └── OrderRoot.java
+│                           ├── order
+│                           └── product
+```
+
+
+## Infrastructure Layer
+```
 ├── java-hexagonal-structure-infrastructure
-│   ├── build
-│   │   ├── classes
-│   │   │   └── java
-│   │   │       └── main
-│   │   │           └── com
-│   │   │               └── app
-│   │   │                   └── aws
-│   │   │                       └── config
-│   │   │                           └── S3Config.class
-│   │   ├── generated
-│   │   │   └── sources
-│   │   │       ├── annotationProcessor
-│   │   │       │   └── java
-│   │   │       │       └── main
-│   │   │       └── headers
-│   │   │           └── java
-│   │   │               └── main
-│   │   ├── libs
-│   │   │   └── java-hexagonal-structure-infrastructure-0.0.1-SNAPSHOT.jar
-│   │   ├── resources
-│   │   │   └── main
-│   │   │       ├── static
-│   │   │       └── templates
-│   │   └── tmp
-│   │       ├── compileJava
-│   │       │   └── previous-compilation-data.bin
-│   │       └── jar
-│   │           └── MANIFEST.MF
 │   ├── build.gradle
 │   └── src
 │       ├── main
 │       │   ├── java
 │       │   │   └── com
 │       │   │       └── app
-│       │   │           └── aws
-│       │   │               └── config
-│       │   │                   └── S3Config.java
+│       │   │           ├── aws
+│       │   │           │   ├── adapters
+│       │   │           │   ├── config
+│       │   │           │   │   └── S3Config.java
+│       │   │           │   └── models
+│       │   │           ├── jpa
+│       │   │           │   ├── adapters
+│       │   │           │   ├── entities
+│       │   │           │   ├── mappers
+│       │   │           │   └── repositories
+│       │   │           ├── kafka
+│       │   │           │   ├── adapters
+│       │   │           │   ├── configs
+│       │   │           │   └── dtos
+│       │   │           ├── redis
+│       │   │           │   └── configs
+│       │   │           │       └── RedisConfig.java
+│       │   │           └── rest
+│       │   │               ├── adapters
+│       │   │               ├── configs
+│       │   │               ├── dtos
+│       │   │               ├── mappers
+│       │   │               └── models
 │       │   └── resources
-│       │       ├── static
 │       │       └── templates
 │       └── test
 │           └── java
