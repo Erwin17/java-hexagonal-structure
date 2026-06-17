@@ -60,10 +60,14 @@
 │                           ├── repository
 │                           └── services
 ```
-* **common:**
-* **entities:**
-* **exceptions:**
-* **ports:**
+* **common:** This package contains common classes for all entities.
+* **entities:** Contains object domain (Entities, Values Object).
+* **exceptions:** We define business exceptions 
+* **ports:** Defines the contracts that will be implemented by the infrastructure layer.
+  * **events:** Ports for publishing and consuming domain events through messaging systems such as Kafka or RabbitMQ.
+  * **repository:** Ports for persisting and retrieving domain data from storage technologies such as MongoDB, PostgresSQL, or others.
+  * **services:** Ports for integrating with external services and third-party APIs.
+
 
 ## Application Layer
 ```
