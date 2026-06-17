@@ -88,7 +88,9 @@
 │                           ├── order
 │                           └── product
 ```
-* **usecase:**
+* **usecase:** Contains the application use cases that orchestrate the execution of business operations.
+Use cases coordinate domain entities, value objects, and ports to fulfill specific business requirements while keeping 
+the domain independent from infrastructure concerns.
 
 ## Infrastructure Layer
 ```
