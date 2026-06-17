@@ -27,6 +27,10 @@
 │               ├── static
 │               └── templates
 ```
+* **config:** 
+* **controller:** 
+* **application-yaml:** 
+
 
 ## Domain Layer
 ```
@@ -55,6 +59,10 @@
 │                           ├── repository
 │                           └── services
 ```
+* **common:**
+* **entities:**
+* **exceptions:**
+* **ports:**
 
 ## Application Layer
 ```
@@ -75,7 +83,7 @@
 │                           ├── order
 │                           └── product
 ```
-
+* **usecase:**
 
 ## Infrastructure Layer
 ```
@@ -117,3 +125,8 @@
 │                   └── app
 └── settings.gradle
 ```
+* **aws:**
+*  **jpa:**
+* **kafka:**
+* **redis:**
+* **rest:**
