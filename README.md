@@ -133,7 +133,18 @@ the domain independent from infrastructure concerns.
 └── settings.gradle
 ```
 * **aws:**
-*  **jpa:**
+  * **adapters:** Implements the ports defined in the domain layer
+  * **configs:** Configuration for AWS services such as S3, SNS, SQS, or others.
+  * **models:** Mappings from application.yaml o Configuration mappings from application.yaml.
+---
+* **jpa:**
+  * **adapters:** Implements the repository ports defined in the domain layer
+  * **entities:** JPA Entities used to map database tables.
+  * **mappers:** Maps domain entities to JPA entities and vice versa.
+  * **repositories:** Contains Spring Data repositories that extend JpaRepository, CrudRepository, PagingAndSortingRepository, or other repository interfaces.
+---
 * **kafka:**
+---
 * **redis:**
+---
 * **rest:**
