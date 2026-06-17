@@ -27,9 +27,10 @@
 │               ├── static
 │               └── templates
 ```
-* **config:** 
-* **controller:** 
-* **application-yaml:** 
+* **config:** In this package we configure all the initial application reference properties related to AWS, external APIs, external resources, etc 
+* * **application.yaml:**  in this point we make use from
+* **controller:** Exposure of rest resource, at this point we make use of the use cases defined in the **application layer**. 
+
 
 
 ## Domain Layer
