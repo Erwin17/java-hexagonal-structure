@@ -152,8 +152,8 @@ the domain independent from infrastructure concerns.
   * **configs:** Configuration for Redis connections, RedisTemplate configuration, etc.
 ---
 * **rest:**
-  * **adapters:**
-  * **configs:**
-  * **dtos:**
-  * **mappers:**
-  * **models:**
+  * **adapters:** Implements the services ports defined in the domain layer.
+  * **configs:** Configuration for RestClient, WebClient, or any configuration for Rest.
+  * **dtos:**  Request and response DTOs used by external REST services.
+  * **mappers:** Maps domain models to REST DTOs and vice versa.
+  * **models:** Auxiliary models required for REST integrations.
