@@ -144,7 +144,16 @@ the domain independent from infrastructure concerns.
   * **repositories:** Contains Spring Data repositories that extend JpaRepository, CrudRepository, PagingAndSortingRepository, or other repository interfaces.
 ---
 * **kafka:**
+  * **adapters:** Implements the event ports defined in the domain layer.
+  * **configs:** Configuration for Apache Kafka, RabbitMQ or others streaming platforms.
+  * **dtos:** DTOs required for publishing and consuming events
 ---
 * **redis:**
+  * **configs:** Configuration for Redis connections, RedisTemplate configuration, etc.
 ---
 * **rest:**
+  * **adapters:**
+  * **configs:**
+  * **dtos:**
+  * **mappers:**
+  * **models:**
